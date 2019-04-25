@@ -30,10 +30,9 @@ warnings.filterwarnings("ignore")
 
                         Categorical features: These features have categories (Gender, Married, Self_Employed, Credit_History,                                                                                                                              
                                                                                                                  Loan_Status)
-                        Ordinal features: Variables in categorical features having some order involved (Dependents,    
-                                                                                                                   Education,                                                                                                                Property_Area)
+                        Ordinal features: Variables in categorical features having some order involved (Dependents,Education,                                                                                                                Property_Area)
                         Numerical features: These features have numerical values (ApplicantIncome, CoapplicantIncome,
-                                                                                                                  LoanAmount,                                                                                                             Loan_Amount_Term)
+												                                                                         LoanAmount,Loan_Amount_Term)
                       
                       
                       
