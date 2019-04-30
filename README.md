@@ -33,9 +33,17 @@ warnings.filterwarnings("ignore")
                         Ordinal features: Variables in categorical features having some order involved (Dependents,Education,                                                                                                                Property_Area)
                         Numerical features: These features have numerical values (ApplicantIncome, CoapplicantIncome,                                                                                                          LoanAmount,Loan_Amount_Term)
                       
-                      
-                      
-                      
+# HYPOTHESIS GENERATED : 
+
+                        Applicants with high income should have more chances of loan approval.
+                        
+                        Applicants who have repaid their previous debts should have higher chances of loan approval.
+                        
+                        Loan approval should also depend on the loan amount. If the loan amount is less, chances of loan                             approval should be high.
+                        
+                        Lesser the amount to be paid monthly to repay the loan, higher the chances of loan approval.        
+                    
+# BIVARIATE ANALYSIS : After looking at every variable individually in univariate analysis, we will now explore them again                          with respect to the target variable.                   
                       
                       
                       
