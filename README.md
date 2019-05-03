@@ -43,8 +43,19 @@ warnings.filterwarnings("ignore")
                         
                         Lesser the amount to be paid monthly to repay the loan, higher the chances of loan approval.        
                     
-# BIVARIATE ANALYSIS : After looking at every variable individually in univariate analysis, we will now explore them again                          with respect to the target variable.                   
-                      
-                      
-                      
+# BIVARIATE ANALYSIS : 
+                        After looking at every variable individually in univariate analysis, we will now explore them again                           with respect to the target variable.                   
+  Categorical Independent Variable vs Target Variable
+                        First of all we will find the relation between target variable and categorical independent variables.                         Let us look at the stacked bar plot now which will give us the proportion of approved and unapproved                         loans.
+  Numerical Independent Variable vs Target Variable
+                        Now lets look at the correlation between all the numerical variables. We will use the heat map to                             visualize the correlation. Heatmaps visualize data through variations in coloring. The variables                             with darker color means their correlation is more.
+                 
+ # Missing value and outliers treatment
+                        After exploring all the variables in our data, we can now impute the missing values and treat the                             outliers because missing data and outliers can have adverse effect on the model performance.
+                        
+   We can consider these methods to fill the missing values:
+                       For numerical variables: imputation using mean or median
+                       For categorical variables: imputation using mode
+                       
+                       
                    
