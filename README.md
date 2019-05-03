@@ -54,8 +54,22 @@ warnings.filterwarnings("ignore")
                         After exploring all the variables in our data, we can now impute the missing values and treat the                             outliers because missing data and outliers can have adverse effect on the model performance.
                         
    We can consider these methods to fill the missing values:
-                       For numerical variables: imputation using mean or median
-                       For categorical variables: imputation using mode
+                       For numerical variables: imputation using mean or median.
+                       For categorical variables: imputation using mode.
                        
+ # Making Dummy Variables
+                       Now we will make dummy variables for the categorical variables. Dummy variable turns categorical                              variables into a series of 0 and 1, making them lot easier to quantify and compare. 
                        
+                       Let us understand the process of dummies first:
+                       Consider the “Gender” variable. It has two classes, Male and Female.
+                       As logistic regression takes only the numerical values as input, we have to change male and female                            into numerical value.Once we apply dummies to this variable, it will convert the “Gender” variable                            into two variables(Gender_Male and Gender_Female), one for each class, i.e. Male and Female.
+                       Gender_Male will have a value of 0 if the gender is Female and a value of 1 if the gender is Male.
+                       
+  # Logistic Regression 
+                       Logistic regression is an estimation of Logit function. Logit function is simply a log of odds in                            favor of the event.This function creates a s-shaped curve with the probability estimate, which is very                        similar to the required step wise function.
+                       NOW : 
+                       1. train_test_split  
+                       2. LogisticRegression
+                       3. accuracy_score
+                       4. fit the logistic regression model.
                    
