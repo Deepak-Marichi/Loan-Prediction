@@ -83,11 +83,13 @@ warnings.filterwarnings("ignore")
 # Feature Engineering
                   Based on the domain knowledge, we can come up with new features that might affect the target variable. We will create                  the following three new features:
 
-# Total Income - 
+Total Income 
 As discussed during bivariate analysis we will combine the Applicant Income and Coapplicant Income. If the total income is high, chances of loan approval might also be high.
-# EMI -
+
+EMI 
 EMI is the monthly amount to be paid by the applicant to repay the loan. Idea behind making this variable is that people who have high EMI’s might find it difficult to pay back the loan. We can calculate the EMI by taking the ratio of loan amount with respect to loan amount term.
-# Balance Income - 
+
+Balance Income 
 This is the income left after the EMI has been paid. Idea behind creating this variable is that if this value is high, the chances are high that a person will repay the loan and hence increasing the chances of loan approval. 
 
 
