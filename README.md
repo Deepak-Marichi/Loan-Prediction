@@ -101,3 +101,23 @@ We will build the following models in this section.
          2. Decision Tree
          3. Random Forest
          4. XGBoost
+         
+# Conclusion 
+        We tried 4 different algorithms and the accuracy score achieved by each are as follow :
+
+          1. Logistic Regression - 81%
+          2. Decision Tree - 71%
+          3. Random Forest - 81%
+          4. XGBoost - 77%
+      
+# What can be done further?
+    There are still quite a many things that can be tried to improve our models’ predictions. We create and add more variables, try   
+    different models with different subset of features and/or rows, etc. Some of the ideas are listed below:
+          1. We can train the XGBoost model using grid search to optimize its hyperparameters and improve the accuracy.
+          2. We can combine the applicants with 1,2,3 or more dependents and make a new feature as discussed in the EDA part.
+          3. We can also make independent vs independent variable visualizations to discover some more patterns.
+          4. We can also arrive at the EMI using a better formula which may include interest rates as well.
+          5. We can even try ensemble modeling (combination of different models). To read more about ensemble techniques you can refer   
+             these articles:
+                            https://www.analyticsvidhya.com/blog/2015/08/introduction-ensemble-learning/
+                            https://www.analyticsvidhya.com/blog/2015/09/questions-ensemble-modeling/
