@@ -103,12 +103,13 @@ We will build the following models in this section.
          4. XGBoost
          
 # Conclusion 
-        We tried 4 different algorithms and the accuracy score achieved by each are as follow :
+        We tried 5 different algorithms and the accuracy score achieved by each are as follow :
 
           1. Logistic Regression - 81%
           2. Decision Tree - 71%
           3. Random Forest - 81%
           4. XGBoost - 77%
+          5. AdaBoost - 95.4%
       
 # What can be done further?
     There are still quite a many things that can be tried to improve our models’ predictions. We create and add more variables, try   
