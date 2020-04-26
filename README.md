@@ -1,124 +1,89 @@
-# Specifications
+## Problem Statement
+Dream Housing Finance company deals in all home loans. They have presence across all urban, semi urban and rural areas. Customer first apply for home loan after that company validates the customer eligibility for loan. Company wants to automate the loan eligibility process (real time) based on customer detail provided while filling online application form. These details are Gender, Marital Status, Education, Number of Dependents, Income, Loan Amount, Credit History and others. To automate this process, they have given a problem to identify the customers segments, those are eligible for loan amount so that they can specifically target these customers.
 
-Python = 3.7
-pandas = 0.20.3
-seaborn = 1.0.0
-sklearn = 0.19.1
+## The project is divided into below modules:
+* Exploratory Data Analysis
+* Data Preparation
+* Predictive Modeling using different techniques.
 
+## We will handle this problem in a structured way. We will be following the table of content given below.
+* 1. Problem Statement
+* 2. Loading Packages and Data
+* 3. Understanding The Data
+* 4. Univariate Analysis
+* 5. Bivariate Analysis 
+* 6. Missing Value Treatment
+* 7. Outlier Treatment
+* 8. Logistic Regression Without Feature Engineering
+* 9. Logistic Regression With Stratified KFolds 
+* 10. Feature Engineering
+* 11. Logistic Regression With Feature Engineering
+* 12. Decision Tree
+* 13. Random Forest
+* 14. XGBOOST
+* 15. AdaBoost Classifier
+* 16. Summary                    
 
-# Loading Packages
+## HYPOTHESIS GENERATED : 
+Applicants with high income should have more chances of loan approval. Applicants who have repaid their previous debts should have higher chances of loan approval.Loan approval should also depend on the loan amount. If the loan amount is less, chances of loan approval should be high. Lesser the amount to be paid monthly to repay the loan, higher the chances of loan approval.
 
-import pandas as pd                    #Data
-import numpy as np                     #For mathematical calculations 
-import seaborn as sns                  #For data visualization 
-import matplotlib.pyplot as plt        #For plotting graphs 
-%matplotlib inline                     #sets the backend of matplotlib to the 'inline' backend: With this backend, the output                                                  of plotting commands is displayed inline within frontends like the Jupyter notebook,                                                    directly below the code cell that produced it. The resulting plots will then also be                                                    stored in the notebook document
-import warnings                        #To ignore any warnings 
-warnings.filterwarnings("ignore")
+## UNIVARIATE ANALYSIS : 
+* We will first look at the target variable, i.e., Loan_Status. As it is a categorical variable, look at its frequency table, percentage   distribution and bar plot.                                                     
 
-
-
-# UNDERSTAND THE DATA : 
-
-                      Data variables , Data types , Data shapes.
-
+* **Categorical features**: Gender| Married | Self_Employed | Credit_History | Loan_Status                      
+* **Ordinal features**: Dependents | Education | Property_Area                                                                 
+* **Numerical features**: ApplicantIncome | CoapplicantIncome | LoanAmount | Loan_Amount_Term                                          
                     
+## BIVARIATE ANALYSIS : 
+* After looking at every variable individually in univariate analysis, we will now explore them again                                     with respect to the target variable.                   
+* First of all we will find the relation between target variable and categorical independent variables.                                   Let us look at the stacked bar plot now which will give us the proportion of approved and unapproved                                     loans.
+* Now lets look at the correlation between all the numerical variables. We will use the heat map to                                       visualize the correlation. Heatmaps visualize data through variations in coloring. The variables                                         with darker color means their correlation is more.
 
-# UNIVARIATE ANALYSIS : 
-                        We will first look at the target variable, i.e., Loan_Status. As it is a categorical variable, let us                                   look at its frequency table, percentage distribution and bar plot.                                                     
-                        Now lets visualize each variable separately. Different types of variables are Categorical, ordinal                                       and numerical.
-
-                        Categorical features: These features have categories (Gender, Married, Self_Employed, Credit_History,                                                                                                                              
-                                                                                                                 Loan_Status)
-                        Ordinal features: Variables in categorical features having some order involved (Dependents,Education,                                                                                                                Property_Area)
-                        Numerical features: These features have numerical values (ApplicantIncome, CoapplicantIncome,                                                                                                          LoanAmount,Loan_Amount_Term)
-                      
-# HYPOTHESIS GENERATED : 
-
-                        Applicants with high income should have more chances of loan approval.
-                        
-                        Applicants who have repaid their previous debts should have higher chances of loan approval.
-                        
-                        Loan approval should also depend on the loan amount. If the loan amount is less, chances of loan                                         approval should be high.
-                        
-                        Lesser the amount to be paid monthly to repay the loan, higher the chances of loan approval.        
-                    
-# BIVARIATE ANALYSIS : 
-                        After looking at every variable individually in univariate analysis, we will now explore them again                                     with respect to the target variable.                   
-                        Categorical Independent Variable vs Target Variable
-                        First of all we will find the relation between target variable and categorical independent variables.                                   Let us look at the stacked bar plot now which will give us the proportion of approved and unapproved                                     loans.
-                        Numerical Independent Variable vs Target Variable
-                        Now lets look at the correlation between all the numerical variables. We will use the heat map to                                       visualize the correlation. Heatmaps visualize data through variations in coloring. The variables                                         with darker color means their correlation is more.
-                 
- # Missing value and outliers treatment
-                        After exploring all the variables in our data, we can now impute the missing values and treat the                                      outliers because missing data and outliers can have adverse effect on the model performance.
-                        
-                       We can consider these methods to fill the missing values:
-                       For numerical variables: imputation using mean or median.
-                       For categorical variables: imputation using mode.
+ ## Missing value and outliers treatment
+* After exploring all the variables in our data, we can now impute the missing values and treat the outliers because missing data and     outliers can have adverse effect on the model performance.
+* We can consider these methods to fill the missing values:
+   * For numerical variables: imputation using mean or median.
+   * For categorical variables: imputation using mode.
+                                           
+## Model Building : Part I [Logistic Regression ]
+Logistic regression is an estimation of Logit function. Logit function is simply a log of odds in favor of the event.This function creates a s-shaped curve with the probability estimate, which is very similar to the required step wise function.
+ NOW : 
+ 1. train_test_split  
+ 2. LogisticRegression
+ 3. accuracy_score
+ 4. fit the logistic regression model.
                        
- # Making Dummy Variables
-                       Now we will make dummy variables for the categorical variables. Dummy variable turns categorical                                        variables into a series of 0 and 1, making them lot easier to quantify and compare. 
-                       
-                       Let us understand the process of dummies first:
-                       Consider the “Gender” variable. It has two classes, Male and Female.
-                       As logistic regression takes only the numerical values as input, we have to change male and female                                      into numerical value.Once we apply dummies to this variable, it will convert the “Gender” variable                                      into two variables(Gender_Male and Gender_Female), one for each class, i.e. Male and Female.
-                       Gender_Male will have a value of 0 if the gender is Female and a value of 1 if the gender is Male.
-                       
-  # Model Building : Part I [Logistic Regression ]
-                       Logistic regression is an estimation of Logit function. Logit function is simply a log of odds in                                        favor of the event.This function creates a s-shaped curve with the probability estimate, which is very                                  similar to the required step wise function.
-                       NOW : 
-                       1. train_test_split  
-                       2. LogisticRegression
-                       3. accuracy_score
-                       4. fit the logistic regression model.
-                       
-  # Straified K-Fold cross validation
-                     To check how robust our model is to unseen data, we can use Validation. It is a technique which involves reserving                      a particular sample of a dataset on which you do not train the model. Later, you test your model on this sample                          before finalizing it. Some of the common methods for validation are listed below:
-                      1. The validation set approach
-                      2. k-fold cross validation
-                      3. Leave one out cross validation (LOOCV)
-                      4. Stratified k-fold cross validation
+ ## Straified K-Fold cross validation
+To check how robust our model is to unseen data, we can use Validation. It is a technique which involves reserving a particular sample of a dataset on which you do not train the model. Later, you test your model on this sample before finalizing it. Some of the common methods for validation are listed below:
+  1. The validation set approach
+  2. k-fold cross validation
+  3. Leave one out cross validation (LOOCV)
+  4. Stratified k-fold cross validation
                       
 # Feature Engineering
-                  Based on the domain knowledge, we can come up with new features that might affect the target variable. We will create                  the following three new features:
-
-Total Income 
+Based on the domain knowledge, we can come up with new features that might affect the target variable. We will create the following three new features:
+**Total Income** 
 As discussed during bivariate analysis we will combine the Applicant Income and Coapplicant Income. If the total income is high, chances of loan approval might also be high.
-
-EMI 
+**EMI** 
 EMI is the monthly amount to be paid by the applicant to repay the loan. Idea behind making this variable is that people who have high EMI’s might find it difficult to pay back the loan. We can calculate the EMI by taking the ratio of loan amount with respect to loan amount term.
-
-Balance Income 
+**Balance Income** 
 This is the income left after the EMI has been paid. Idea behind creating this variable is that if this value is high, the chances are high that a person will repay the loan and hence increasing the chances of loan approval. 
 
 
-# Model Building : Part II
-After creating new features, we can continue the model building process. So we will start with logistic regression model and then move over to more complex models like RandomForest and XGBoost.
-
-We will build the following models in this section.
+## Model Building : Part II
+* After creating new features, we can continue the model building process. So we will start with logistic regression model and then move   over to more complex models like RandomForest and XGBoost.
+* We will build the following models in this section.
          1. Logistic Regression
          2. Decision Tree
          3. Random Forest
          4. XGBoost
          
-# Conclusion 
-        We tried 5 different algorithms and the accuracy score achieved by each are as follow :
+## Summary 
+We tried 5 different algorithms and the accuracy score achieved by each are as follow :
 
-          1. Logistic Regression - 81%
-          2. Decision Tree - 71%
-          3. Random Forest - 81%
-          4. XGBoost - 77%
-          5. AdaBoost - 95.4%
+  1. Logistic Regression - 81%
+  2. Decision Tree - 71%
+  3. Random Forest - 81%
+  4. XGBoost - 77%
+  5. AdaBoost - 95.4%
       
-# What can be done further?
-    There are still quite a many things that can be tried to improve our models’ predictions. We create and add more variables, try   
-    different models with different subset of features and/or rows, etc. Some of the ideas are listed below:
-          1. We can train the XGBoost model using grid search to optimize its hyperparameters and improve the accuracy.
-          2. We can combine the applicants with 1,2,3 or more dependents and make a new feature as discussed in the EDA part.
-          3. We can also make independent vs independent variable visualizations to discover some more patterns.
-          4. We can also arrive at the EMI using a better formula which may include interest rates as well.
-          5. We can even try ensemble modeling (combination of different models). To read more about ensemble techniques you can refer   
-             these articles:
-                            https://www.analyticsvidhya.com/blog/2015/08/introduction-ensemble-learning/
-                            https://www.analyticsvidhya.com/blog/2015/09/questions-ensemble-modeling/
